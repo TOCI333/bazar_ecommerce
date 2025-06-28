@@ -15,11 +15,10 @@ session_start();
 </head>
 
 <body>
-    <!-- upper-nav -->
+    
     <div class="upper-nav primary-bg p-2 px-3 text-center text-break">
         <span>Venta de verano al 50% de descuento <a>Compra Ahora</a></span>
     </div>
-    <!-- upper-nav -->
     <!-- Start NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">

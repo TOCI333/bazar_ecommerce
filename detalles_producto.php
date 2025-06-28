@@ -16,10 +16,9 @@ session_start();
 
 <body>
     <!-- upper-nav -->
-    <div class="upper-nav primary-bg p-2 px-3 text-center text-break">
-        <span>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a>Shop Now</a></span>
+ <div class="upper-nav primary-bg p-2 px-3 text-center text-break">
+        <span>Venta de verano al 50% de descuento <a>Compra Ahora</a></span>
     </div>
-    <!-- upper-nav -->
     <!-- Start NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -30,35 +29,35 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="./index.php">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./products.php">Products</a>
+                        <a class="nav-link" href="./products.php">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">Acerca de</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#">Contacto</a>
                     </li>
                     <?php
                         if(isset($_SESSION['username'])){                            
                             echo "
                             <li class='nav-item'>
-                            <a class='nav-link' href='./users_area/profile.php'>My Account</a>
+                            <a class='nav-link' href='./users_area/profile.php'>Mi Cuenta</a>
                         </li>";
                         }
                         else{
                             echo "
                             <li class='nav-item'>
-                            <a class='nav-link' href='./users_area/user_registration.php'>Register</a>
+                            <a class='nav-link' href='./users_area/user_registration.php'>Registrar</a>
                         </li>";
                         }
                     ?>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
                 </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
