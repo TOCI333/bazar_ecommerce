@@ -68,18 +68,18 @@ if (isset($_POST['user_login'])) {
             $_SESSION['username'] = $user_username;
             if ($row_count == 1 && $row_cart_count == 0) {
                 $_SESSION['username'] = $user_username;
-                echo "<script>alert('Login Successfully');</script>";
-                echo "<script>window.open('profile.php','_self');</script>";
+                echo "<script>alert('Inicio de Sesión Exitosa');</script>";
+               // echo "<script>window.open('profile.php','_self');</script>";
             } else if ($row_count == 1 && $row_cart_count > 0) {
                 $_SESSION['username'] = $user_username;
-                echo "<script>alert('Login Successfully');</script>";
-                echo "<script>window.open('payment.php','_self');</script>";
+                echo "<script>alert('Inicio de Sesión Exitosa');</script>";
+                echo "<script>window.open('index.php.php','_self');</script>";
             }
         } else {
-            echo "<script>alert('Invalid Credentials')</script>";
+            echo "<script>alert('Credenciales inválidas')</script>";
         }
     } else {
-        echo "<script>alert('Invalid Credentials')</script>";
+        echo "<script>alert('Credenciales inválidas')</script>";
     }
 }
 ?>

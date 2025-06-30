@@ -51,22 +51,22 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h1 class="text-center mb-4">Edit Product</h1>
+            <h1 class="text-center mb-4">Editar Producto</h1>
             <form action="" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-3 mb-3">
                 <div class="form-outline">
-                    <label for="product_title" class="form-label">Product Title</label>
+                    <label for="product_title" class="form-label">Título del Producto</label>
                     <input type="text" name="product_title" id="product_title" class="form-control" required value="<?php echo $product_title;?>">
                 </div>
                 <div class="form-outline">
-                    <label for="product_description" class="form-label">Product Description</label>
+                    <label for="product_description" class="form-label">Descripción del Producto</label>
                     <input type="text" name="product_description" id="product_description" class="form-control" required value="<?php echo $product_description;?>">
                 </div>
                 <div class="form-outline">
-                    <label for="product_keywords" class="form-label">Product Keywords</label>
+                    <label for="product_keywords" class="form-label">Palabras Clave del Producto</label>
                     <input type="text" name="product_keywords" id="product_keywords" class="form-control" required value="<?php echo $product_keywords;?>">
                 </div>
                 <div class="form-outline">
-                    <label for="product_category" class="form-label">Product Category</label>
+                    <label for="product_category" class="form-label">Categoría del Producto</label>
                     <select name="product_category" id="product_category" class="form-select" required >
                         <?php
                         // fetch all category with selected
@@ -85,7 +85,7 @@
                     </select>
                 </div>
                 <div class="form-outline">
-                    <label for="product_brand" class="form-label">Product Category</label>
+                    <label for="product_brand" class="form-label">Categoría del Producto</label>
                     <select name="product_brand" id="product_brand" class="form-select" required>
                         <?php
                         // fetch all brands with selected
@@ -104,32 +104,32 @@
                     </select>
                 </div>
                 <div class="form-outline">
-                    <label for="product_image_uno" class="form-label">Product Image 1</label>
+                    <label for="product_image_uno" class="form-label">Imagen del product uno</label>
                     <div class="d-flex">
                         <input type="file" name="product_image_uno" id="product_image_uno" class="form-control" value="<?php echo $product_image_uno_old;?>">
                         <img src="./product_images/<?php echo $product_image_uno_old;?>" alt="<?php echo $product_title;?>" class="img-thumbnail" width="100px">
                     </div>
                 </div>
                 <div class="form-outline">
-                    <label for="product_image_dos" class="form-label">Product Image 2</label>
+                    <label for="product_image_dos" class="form-label">Imagen del producto dos</label>
                     <div class="d-flex">
                         <input type="file" name="product_image_dos" id="product_image_dos" class="form-control" value="<?php echo $product_image_dos_old;?>">
                         <img src="./product_images/<?php echo $product_image_dos_old;?>" alt="<?php echo $product_title;?>" class="img-thumbnail" width="100px">
                     </div>
                 </div>
                 <div class="form-outline">
-                    <label for="product_image_tres" class="form-label">Product Image 3</label>
+                    <label for="product_image_tres" class="form-label">Imagen del producto tres</label>
                     <div class="d-flex">
                         <input type="file" name="product_image_tres" id="product_image_tres" class="form-control" value="<?php echo $product_image_tres_old;?>">
                         <img src="./product_images/<?php echo $product_image_tres_old;?>" alt="<?php echo $product_title;?>" class="img-thumbnail" width="100px">
                     </div>
                 </div>
                 <div class="form-outline">
-                    <label for="product_precio" class="form-label">Product Price</label>
+                    <label for="product_precio" class="form-label">Precio del Producto</label>
                     <input type="number" name="product_precio" id="product_precio" class="form-control" required value="<?php echo $product_precio;?>">
                 </div>
                 <div class="form-outline text-center">
-                    <input type="submit" value="Update Product" class="btn btn-primary" name="update_product">
+                    <input type="submit" value="Actualizar Producto" class="btn btn-primary" name="update_product">
                 </div>
             </form>
         </div>

@@ -1,6 +1,6 @@
 <?php
 include('./includes/connect.php');
-include('./functions/funciones varias.php');
+include_once('./functions/funciones varias.php');
 session_start();
 ?>
 <!DOCTYPE html>
@@ -60,7 +60,7 @@ session_start();
                 </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./cart.php"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a class="nav-link" href="./carrito.php"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M3 5H7L10 22H26" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -185,7 +185,7 @@ session_start();
                                             // header('Location: '.$_SERVER['REQUEST_URI']);
                                             // header("refresh: 2");
                                             // echo "<h1>total_price after: $total_price</h1><br/>";
-                                            echo "<script>window.open('cart.php','_self');</script>";
+                                            echo "<script>window.open('carrito.php','_self');</script>";
                                         }
                                         ?>
                                         <td>
@@ -194,11 +194,11 @@ session_start();
                                         <td><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></td>
                                         <td>
                                             <!-- <button class="btn btn-dark">Update</button> -->
-                                            <input type="submit" value="Update" class="btn btn-dark" name="update_cart">
+                                            <input type="submit" value="Actualizar" class="btn btn-dark" name="update_cart">
                                         </td>
                                         <td>
                                             <!-- <button class="btn btn-primary">Remove</button> -->
-                                            <input type="submit" value="Remove" class="btn btn-primary" name="remove_cart">
+                                            <input type="submit" value="Eliminar" class="btn btn-primary" name="remove_cart">
                                         </td>
                                     </tr>
                         <?php   }
@@ -250,7 +250,7 @@ session_start();
                             $delete_query = "DELETE FROM `card_details` WHERE product_id=$remove_id";
                             $delete_run_result = mysqli_query($con, $delete_query);
                             if ($delete_run_result) {
-                                echo "<script>window.open('cart.php','_self');</script>";
+                                echo "<script>window.open('carrito.php','_self');</script>";
                             }
                         }
                     }

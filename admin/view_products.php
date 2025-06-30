@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Product Page</title>
+    <title>Ver Productos</title>
 </head>
 
 <body>
@@ -12,19 +12,19 @@
         <div class="categ-header">
             <div class="sub-title">
                 <span class="shape"></span>
-                <h2>All Products</h2>
+                <h2>Todos los Productos</h2>
             </div>
         </div>
         <div class="table-data">
             <table class="table table-bordered table-hover table-striped text-center">
                 <thead class="table-dark">
                     <tr>
-                        <th>Product ID</th>
-                        <th>Product Title</th>
-                        <th>Product Image</th>
-                        <th>Product Price</th>
-                        <th>Total Sold</th>
-                        <th>Status</th>
+                        <th>ID del Producto</th>
+                        <th>Título del Producto</th>
+                        <th>Imagen del Producto</th>
+                        <th>Precio del Producto</th>
+                        <th>Total Vendido</th>
+                        <th>Estado</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -81,15 +81,15 @@
                                                             <path d='M41.2715 22.2715C42.248 21.2949 42.248 19.709 41.2715 18.7324C40.2949 17.7559 38.709 17.7559 37.7324 18.7324L29.5059 26.9668L21.2715 18.7402C20.2949 17.7637 18.709 17.7637 17.7324 18.7402C16.7559 19.7168 16.7559 21.3027 17.7324 22.2793L25.9668 30.5059L17.7402 38.7402C16.7637 39.7168 16.7637 41.3027 17.7402 42.2793C18.7168 43.2559 20.3027 43.2559 21.2793 42.2793L29.5059 34.0449L37.7402 42.2715C38.7168 43.248 40.3027 43.248 41.2793 42.2715C42.2559 41.2949 42.2559 39.709 41.2793 38.7324L33.0449 30.5059L41.2715 22.2715Z' fill='#EA4335' />
                                                         </svg>
                                                     </span>
-                                                    <h2>Are you sure?</h2>
+                                                    <h2>Estás seguro?</h2>
                                                     <p>
-                                                        Do you really want to delete these records? this process cannot be done.
+                                                        ¿Realmente quieres eliminar estos registros? Este proceso no se puede deshacer.
                                                     </p>
                                                     <div class='btns d-flex gap-3'>
-                                                        <button type='button' class='btn px-5 btn-secondary' data-bs-dismiss='modal'>Cancel</button>
+                                                        <button type='button' class='btn px-5 btn-secondary' data-bs-dismiss='modal'>Cancelar</button>
                                                         <button type='button' class='btn px-5 btn-primary' data-bs-dismiss='modal'>
                                                             <a class='text-light' href='index.php?delete_brand=$product_id'>
-                                                                Delete ($product_title)
+                                                                Eliminar ($product_title)
                                                             </a>
                                                         </button>
                                                     </div>

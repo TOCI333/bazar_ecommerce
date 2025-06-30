@@ -1,6 +1,6 @@
 <?php
 include('./includes/connect.php');
-include('./functions/funciones varias.php');
+include_once('./functions/funciones varias.php');;
 session_start();
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ session_start();
                 </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./cart.php"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a class="nav-link" href="./carrito.php"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M3 5H7L10 22H26" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -107,7 +107,7 @@ session_start();
                     </li>";
                 }else{
                         echo "<li class='nav-item'>
-                        <a class='nav-link' href='./users_area/logout.php'>
+                        <a class='nav-link' href='../users_area/logout.php'>
                             Logout
                         </a>
                     </li>";
@@ -125,17 +125,16 @@ session_start();
             <div class="row m-0">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p-md-0 tabs-categ">
                     <ul class="p-md-0 d-flex flex-column gap-3 pt-md-3">
-                        <li>Women's Fashion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>
+                        <li>Moda de Dama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>
                         </li>
-                        <li>men's Fashion
+                        <span></span>
+                        <li>Moda de Hombre
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>
                         </li>
-                        <li>Electronics</li>
-                        <li>Home & lifestyle</li>
-                        <li>Medicine</li>
-                        <li>Sports & Outdoor</li>
-                        <li>Baby's & Toys</li>
-                        <li>Health & Beauty</li>
+                        <span></span>
+                        <li>Instrumentos
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-9 col-md-9 d-none d-sm-none d-md-block pt-md-4">

@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Admin Registration</title>
+    <title>Admin Registro</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.css" />
     <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
@@ -19,39 +19,37 @@ session_start();
     <!-- Start Landing Section -->
     <div class="landing admin-register">
         <div class="">
-            <h2 class="text-center mb-1">Admin Registration</h2>
-            <h4 class="text-center mb-3 fw-light">Create an account</h4>
+            <h2 class="text-center mb-1">Registro de Admin</h2>
+            <h4 class="text-center mb-3 fw-light">Crea una cuenta</h4>
             <div class="row m-0">
-                <div class="col-md-6 p-0 d-none d-md-block">
-                    <img src="../assets/images/bgregister.png" class="admin-register" alt="Register photo">
-                </div>
+               
                 <div class="col-md-6 py-4 px-5 d-flex flex-column gap-4">
                     <div>
                         <form action="" method="post" class="d-flex flex-column gap-4" enctype="multipart/form-data">
                             <div class="form-outline">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required>
+                                <label for="username" class="form-label">Nombre de Usuario</label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Ingrese su nombre de usuario" required>
                             </div>
                             <div class="form-outline">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required>
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese su correo electrónico" required>
                             </div>
                             <div class="form-outline">
-                                <label for="admin_image" class="form-label">Admin Image</label>
+                                <label for="admin_image" class="form-label">Admin Imagen</label>
                                 <input type="file" name="admin_image" id="admin_image" class="form-control" required>
                             </div>
                             <div class="form-outline">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password" required>
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su Contraseña" required>
                             </div>
                             <div class="form-outline">
-                                <label for="conf_password" class="form-label">Confirm Password</label>
-                                <input type="password" name="conf_password" id="conf_password" class="form-control" placeholder="Confirm your Password" required>
+                                <label for="conf_password" class="form-label">Confirmar Contraseña</label> 
+                                <input type="password" name="conf_password" id="conf_password" class="form-control" placeholder="Confirmar Contraseña" required>
                             </div>
                             <div class="form-outline">
-                                <input type="submit" value="Register" class="btn btn-primary mb-3" name="admin_register">
+                                <input type="submit" value="Registrar" class="btn btn-primary mb-3" name="admin_register">
                                 <p class="small">
-                                    You already have an account? <a href="./admin_login.php" class="text-decoration-underline text-success fw-bold">Login</a>
+                                    ¿Ya tienes una cuenta? <a href="./admin_login.php" class="text-decoration-underline text-success fw-bold">Iniciar Sesión</a>
                                 </p>
                             </div>
                         </form>

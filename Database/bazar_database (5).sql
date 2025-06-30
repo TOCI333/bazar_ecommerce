@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 31, 2023 at 09:30 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 30-06-2025 a las 07:52:47
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecommerce_1`
+-- Base de datos: `bazar_database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_table`
+-- Estructura de tabla para la tabla `admin_table`
 --
 
 CREATE TABLE `admin_table` (
@@ -36,16 +36,16 @@ CREATE TABLE `admin_table` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin_table`
+-- Volcado de datos para la tabla `admin_table`
 --
 
 INSERT INTO `admin_table` (`admin_id`, `admin_name`, `admin_email`, `admin_image`, `admin_password`) VALUES
-(1, 'abdo', 'abdo@gmail.com', 'logo after 3d_2.png', '$2y$10$M/A/r5j/GSeJrAZxI8NtRu9eG5yNltfgTrfQVoClfSIF/pzNUXa2W');
+(0, 'toci333', 'isaactole333@gmail.com', 'Captura de pantalla 2025-06-29 222323.png', '$2y$10$w7B4hEBE6coCM1Qp7q7wK./cTDZ/jKxH0GJiXcqg/h1t7OqL4lAlS');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
+-- Estructura de tabla para la tabla `brands`
 --
 
 CREATE TABLE `brands` (
@@ -54,7 +54,7 @@ CREATE TABLE `brands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `brands`
+-- Volcado de datos para la tabla `brands`
 --
 
 INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
@@ -64,7 +64,7 @@ INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `card_details`
+-- Estructura de tabla para la tabla `card_details`
 --
 
 CREATE TABLE `card_details` (
@@ -73,34 +73,41 @@ CREATE TABLE `card_details` (
   `quantity` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `card_details`
+--
+
+INSERT INTO `card_details` (`product_id`, `ip_address`, `quantity`) VALUES
+(-1221709778, '0.1�\0\0	\0', -2145910748),
+(-1221709778, '0.1�\0\0	\0', -2145386460),
+(-1221709778, '0.1�\0\0	\0', -2144862166),
+(1, '127.0.0.1', 1),
+(5, '127.0.0.1', 1);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Estructura de tabla para la tabla `categories`
 --
 
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
-  `category_title` varchar(100) NOT NULL
+  `categoria` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categories`
+-- Volcado de datos para la tabla `categories`
 --
 
-INSERT INTO `categories` (`category_id`, `category_title`) VALUES
-(1, 'Mobiles'),
-(2, 'Books'),
-(3, 'Food'),
-(4, 'Clothes'),
-(5, 'HeadPhones'),
-(6, 'Electronics'),
-(7, 'Accessories');
+INSERT INTO `categories` (`category_id`, `categoria`) VALUES
+(1, 'Instrumentos'),
+(2, 'Ropa Mujer'),
+(3, 'Ropa Hombre');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders_pending`
+-- Estructura de tabla para la tabla `orders_pending`
 --
 
 CREATE TABLE `orders_pending` (
@@ -113,7 +120,7 @@ CREATE TABLE `orders_pending` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `orders_pending`
+-- Volcado de datos para la tabla `orders_pending`
 --
 
 INSERT INTO `orders_pending` (`order_id`, `user_id`, `invoice_number`, `product_id`, `quantity`, `order_status`) VALUES
@@ -126,7 +133,7 @@ INSERT INTO `orders_pending` (`order_id`, `user_id`, `invoice_number`, `product_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Estructura de tabla para la tabla `products`
 --
 
 CREATE TABLE `products` (
@@ -145,19 +152,26 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `products`
+-- Volcado de datos para la tabla `products`
 --
 
 INSERT INTO `products` (`product_id`, `product_title`, `product_description`, `product_keywords`, `category_id`, `brand_id`, `product_image_uno`, `product_image_dos`, `product_image_tres`, `product_precio`, `date`, `status`) VALUES
-(1, 'HAVIT HV-G92 Gamepad', 'allows you to use the familiar layout and buttons to enjoy console control when playing games on your PC The Havit HV-G92 also has multiple game profiles for pressure and controller settings', 'gamepad , havit , hv-g92 , logistech', 6, 9, 'havit1.png', 'havit2.png', 'havit1.png', 120, '2023-08-29 18:05:15', 'true'),
-(2, 'ASUS FHD Gaming Laptop', 'Laptop ASUS TUF Gaming F15 FX506HF-HN001W(11th Intel® Core™ i5 11400H - Ram 8GB - Hard 512 GB SSD - GPU Nvidia Geforce RTX™ 2050 4GB - Display 15.6 4k', 'Laptop , gaming , asus , intell 11', 6, 2, 'lap1.png', 'lap2.png', 'lap3.png', 700, '2023-10-25 02:06:58', 'true'),
-(3, 'CANON EOS DSLR Camera', 'High Image Quality with 32.5 Megapixel CMOS (APS-C) Sensor DIGIC 8 Image Processor. High-Speed Continuous Shooting of up to 10 fps with no Time Lag during OVF Shooting. 4K (UHD) 30fps / FHD 120fps Video', 'Canon, camera , high quality, 4k', 6, 1, 'camera1.png', 'camera2.png', 'camera3.png', 380, '2023-08-29 18:13:22', 'true'),
-(4, 'Breed Dry Dog Food', 'Chicken, chicken by-product meal, corn, wheat, chicken fat, ground grain sorghum, natural flavors, dried plain beet pulp, egg product, potassium chloride, sodium hexametaphosphate, salt, cat food, dog food', 'food, dog food, cat food', 3, 9, 'food1.png', 'food2.png', 'food3.png', 100, '2023-10-25 01:41:31', 'true');
+(1, 'Guitarra semihueca vintage', 'Guitarra eléctrica semihueca color negro con golpeador perla.', 'guitarra,semihueca,vintage,negra', 1, 1, 'assets/images/instrumento1.jpg', '', '', 15000, '2025-06-29 18:23:50', 'active'),
+(2, 'Guitarra eléctrica sólida Sunburst', 'Guitarra eléctrica de cuerpo sólido con acabado sunburst.', 'guitarra,eléctrica,sólida,sunburst', 1, 1, 'assets/images/instrumento2.jpg', '', '', 18000, '2025-06-29 18:23:50', 'active'),
+(3, 'Bajo eléctrico 4 cuerdas', 'Bajo eléctrico de 4 cuerdas con acabado mate negro.', 'bajo,eléctrico,4 cuerdas,negro', 1, 1, 'assets/images/instrumento3.jpg', '', '', 17000, '2025-06-29 18:23:50', 'active'),
+(4, 'Abrigo largo de cuero caramelo', 'Abrigo largo color caramelo con botones grandes.', 'abrigo,cuero,caramelo,hombre', 3, 2, 'assets/images/prenda1h.jpg', '', '', 250, '2025-06-29 18:23:50', 'active'),
+(5, 'Chaqueta de antelina verde', 'Chaqueta de antelina verde con forro naranja y botones rojos.', 'chaqueta,antelina,verde,hombre', 3, 2, 'assets/images/prenda2h.jpg', '', '', 180, '2025-06-29 18:23:50', 'active'),
+(6, 'Chaqueta de ante con flecos', 'Chaqueta de ante marrón con flecos estilo boho.', 'chaqueta,ante,flecos,hombre', 3, 2, 'assets/images/prenda3h.jpg', '', '', 200, '2025-06-29 18:23:50', 'active'),
+(7, 'Abrigo mostaza con borrego', 'Abrigo mostaza con cuello de borrego marrón.', 'abrigo,mostaza,borrego,hombre', 3, 2, 'assets/images/prenda4h.jpg', '', '', 220, '2025-06-29 18:23:50', 'active'),
+(8, 'Vestido sin mangas verde agua', 'Vestido sin mangas color verde agua corte evasé.', 'vestido,verde,agua,mujer', 2, 2, 'assets/images/prenda1m.jpg', '', '', 75, '2025-06-29 18:23:50', 'active'),
+(9, 'Blusa retro naranja', 'Blusa sin mangas con estampado geométrico naranja.', 'blusa,retro,naranja,mujer', 2, 2, 'assets/images/prenda2m.jpg', '', '', 65, '2025-06-29 18:23:50', 'active'),
+(10, 'Vestido mostaza casual', 'Vestido mostaza de manga corta, estilo informal.', 'vestido,mostaza,mujer', 2, 2, 'assets/images/prenda3m.jpg', '', '', 50, '2025-06-29 18:23:50', 'active'),
+(11, 'Vestido vintage geométrico', 'Vestido de manga corta con estampado geométrico y botones rosas.', 'vestido,geometrico,vintage,mujer', 2, 2, 'assets/images/prenda4m.jpg', '', '', 95, '2025-06-29 18:23:50', 'active');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_orders`
+-- Estructura de tabla para la tabla `user_orders`
 --
 
 CREATE TABLE `user_orders` (
@@ -171,18 +185,18 @@ CREATE TABLE `user_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user_orders`
+-- Volcado de datos para la tabla `user_orders`
 --
 
 INSERT INTO `user_orders` (`order_id`, `user_id`, `amount_due`, `invoice_number`, `total_products`, `order_date`, `order_status`) VALUES
-(1, 1, 1160, 312346784, 3, '2023-10-22 15:31:20', 'paid'),
-(2, 1, 760, 1918753782, 1, '2023-10-24 00:25:10', 'pending'),
-(3, 1, 240, 351837813, 1, '2023-10-24 18:41:02', 'pending');
+(1, 1, 1160, 312346784, 3, '2023-10-22 21:31:20', 'paid'),
+(2, 1, 760, 1918753782, 1, '2023-10-24 06:25:10', 'pending'),
+(3, 1, 240, 351837813, 1, '2023-10-25 00:41:02', 'pending');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_payments`
+-- Estructura de tabla para la tabla `user_payments`
 --
 
 CREATE TABLE `user_payments` (
@@ -194,17 +208,10 @@ CREATE TABLE `user_payments` (
   `payment_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `user_payments`
---
-
-INSERT INTO `user_payments` (`payment_id`, `order_id`, `invoice_number`, `amount`, `payment_method`, `payment_date`) VALUES
-(1, 1, 312346784, 1160, 'paypal', '2023-10-24 00:23:26');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_table`
+-- Estructura de tabla para la tabla `user_table`
 --
 
 CREATE TABLE `user_table` (
@@ -219,121 +226,55 @@ CREATE TABLE `user_table` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user_table`
+-- Volcado de datos para la tabla `user_table`
 --
 
 INSERT INTO `user_table` (`user_id`, `username`, `user_email`, `user_password`, `user_image`, `user_ip`, `user_address`, `user_mobile`) VALUES
-(1, 'abdo', 'abdo@gmail.com', '$2y$10$5ynby9fq7wf2ZmHlkvehu.JGbK6r7zZLtLzuJz9Jt5FP03rGZ9Mj.', 'new logo after Edit1920.png', '::1', 'Cairo', '123456789');
+(0, 'toci333', 'isaactole@gmail.com', '$2y$10$cGZHISA5WOl/zhDeSetuOe5vbm58M605/4npiSxV.18VSGAwnACsW', '5470402300000002.png', '127.0.0.1', 'Fresno Mz.1 Lt1', '5562823120');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `admin_table`
+-- Indices de la tabla `admin_table`
 --
 ALTER TABLE `admin_table`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `brands`
---
-ALTER TABLE `brands`
-  ADD PRIMARY KEY (`brand_id`);
-
---
--- Indexes for table `card_details`
---
-ALTER TABLE `card_details`
-  ADD PRIMARY KEY (`product_id`);
-
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`category_id`);
-
---
--- Indexes for table `orders_pending`
---
-ALTER TABLE `orders_pending`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- Indexes for table `products`
+-- Indices de la tabla `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `user_orders`
+-- Indices de la tabla `user_orders`
 --
 ALTER TABLE `user_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `user_payments`
+-- Indices de la tabla `user_payments`
 --
 ALTER TABLE `user_payments`
   ADD PRIMARY KEY (`payment_id`);
 
 --
--- Indexes for table `user_table`
+-- Indices de la tabla `user_table`
 --
 ALTER TABLE `user_table`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `admin_table`
---
-ALTER TABLE `admin_table`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `brands`
---
-ALTER TABLE `brands`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `orders_pending`
---
-ALTER TABLE `orders_pending`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `user_orders`
---
-ALTER TABLE `user_orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `user_payments`
---
-ALTER TABLE `user_payments`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `user_table`
---
-ALTER TABLE `user_table`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

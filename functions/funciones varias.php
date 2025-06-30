@@ -531,12 +531,12 @@ function get_user_order_details()
                     $get_orders_result = mysqli_query($con,$get_orders_query);
                     $row_orders_count = mysqli_num_rows($get_orders_result);
                     if($row_orders_count > 0){
-                        echo "<h3 class='text-center mb-3'>You have <span class='text-2'>$row_orders_count</span> pending orders</h3>
-                            <a href='profile.php?my_orders' class='text-center text-decoration-underline fs-5'>Order details</a>
+                        echo "<h3 class='text-center mb-3'>Tu tienes <span class='text-2'>$row_orders_count</span> ordenes pendientes</h3>
+                            <a href='profile.php?my_orders' class='text-center text-decoration-underline fs-5'>Detalles de la orden</a>
                         ";
                     }else{
-                        echo "<h3 class='text-center mb-3'>You have <span class='text-success'>0</span> pending orders</h3>
-                            <a href='../index.php' class='text-center text-decoration-underline fs-5'>Explore products</a>
+                        echo "<h3 class='text-center mb-3'>Tu tienes <span class='text-success'>0</span> ordenes pendientes</h3>
+                            <a href='../index.php' class='text-center text-decoration-underline fs-5'>Explorar productos</a>
                         ";
                     }
                 }

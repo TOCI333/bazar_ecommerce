@@ -12,17 +12,15 @@ if(!isset($_SESSION['username'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $_SESSION['username'];?> Profile</title>
+    <title><?php echo $_SESSION['username'];?> Perfil  </title>
     <link rel="stylesheet" href="../assets/css/bootstrap.css" />
     <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 
 <body>
-    <!-- upper-nav -->
     <div class="upper-nav primary-bg p-2 px-3 text-center text-break">
-        <span>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a>Shop Now</a></span>
+        <span>Venta de verano al 50% de descuento <a>Compra Ahora</a></span>
     </div>
-    <!-- upper-nav -->
     <!-- Start NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -33,28 +31,39 @@ if(!isset($_SESSION['username'])){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.php">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../products.php">Products</a>
+                        <a class="nav-link" href="./products.php">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">About</a>
+                        <a class="nav-link" href="#">Acerca de</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contact</a>
+                        <a class="nav-link" href="#">Contacto</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active"  aria-current="page" href="profile.php">My Account</a>
-                    </li>
+                    <?php
+                        if(isset($_SESSION['username'])){                            
+                            echo "
+                            <li class='nav-item'>
+                            <a class='nav-link' href='./users_area/profile.php'>Mi Cuenta</a>
+                        </li>";
+                        }
+                        else{
+                            echo "
+                            <li class='nav-item'>
+                            <a class='nav-link' href='./users_area/user_registration.php'>Registrarse</a>
+                        </li>";
+                        }
+                    ?>
                 </ul>
-                <form class="d-flex" action="../search_product.php">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
                 </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="../cart.php"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a class="nav-link" href="./carrito.php"><svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M3 5H7L10 22H26" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -82,11 +91,11 @@ if(!isset($_SESSION['username'])){
                             <?php
                                 if(!isset($_SESSION['username'])){
                                     echo "<span>
-                                    Welcome guest
+                                    Bienvenido Invitado
                                 </span>";
                             }else{
                                     echo "<span>
-                                    Welcome ".$_SESSION['username']. "</span>";
+                                    Bienvenido ".$_SESSION['username']. "</span>";
                                 }
                                 ?>
                         </a>
@@ -100,7 +109,7 @@ if(!isset($_SESSION['username'])){
                     </li>";
                 }else{
                         echo "<li class='nav-item'>
-                        <a class='nav-link' href='./logout.php'>
+                        <a class='nav-link' href='./users_area/logout.php'>
                             Logout
                         </a>
                     </li>";
@@ -141,25 +150,31 @@ if(!isset($_SESSION['username'])){
                             ?>
                             <li class="nav-item d-flex align-items-center gap-2">
                                 <a href="profile.php" class="nav-link fw-bold">
-                                    <h6>Pending Orders</h6>
+                                    <h6>Ordenes Pendientes</h6>
                                 </a>
                             </li>
                             <li class="table-group-divider"></li>
                             <li class="nav-item d-flex align-items-center gap-2">
                                 <a href="profile.php?edit_account" class="nav-link fw-bold">
-                                    <h6>Edit Account</h6>
+                                    <h6>Editar Cuenta</h6>
                                 </a>
                             </li>
                             <li class="table-group-divider"></li>
                             <li class="nav-item d-flex align-items-center gap-2">
                                 <a href="profile.php?my_orders" class="nav-link fw-bold">
-                                    <h6>My Orders</h6>
+                                    <h6>Mis Ordenes</h6>
                                 </a>
                             </li>
                             <li class="table-group-divider"></li>
                             <li class="nav-item d-flex align-items-center gap-2">
                                 <a href="profile.php?delete_account" class="nav-link fw-bold">
-                                    <h6>Delete Account</h6>
+                                    <h6>Eliminar Cuenta</h6>
+                                </a>
+                            </li>
+                            <li class="table-group-divider"></li>
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <a href="../admin/index.php" class="nav-link fw-bold">
+                                    <h6>SUPER USUARIO</h6>
                                 </a>
                             </li>
                             <li class="table-group-divider"></li>

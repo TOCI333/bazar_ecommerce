@@ -22,9 +22,7 @@ session_start();
             <h2 class="text-center mb-1">Registro de Super Usuario</h2>
             <h4 class="text-center mb-3 fw-light">Ingresa a tu Cuenta</h4>
             <div class="row m-0 align-items-center">
-                <div class="col-md-6 p-0 d-none d-md-block">
-                    <img src="../assets/images/bgregister.png" class="admin-register" alt="Login photo">
-                </div>
+                
                 <div class="col-md-6 py-4 px-5 d-flex flex-column gap-4">
                     <div>
                         <form action="" method="post" class="d-flex flex-column gap-4">
@@ -69,10 +67,10 @@ if (isset($_POST['admin_login'])) {
     if ($row_count > 0) {
         if (password_verify($password, $row_data['admin_password'])) {
             $_SESSION['admin_username'] = $username;
-            echo "<script>alert('Login Successfully');</script>";
+            echo "<script>alert('Inicio de sesión exitoso');</script>";
             echo "<script>window.open('./index.php','_self');</script>";
         } else {
-            echo "<script>alert('Invalid Credentials')</script>";
+            echo "<script>alert('Credenciales inválidas')</script>";
         }
     } else {
         echo "<script>alert('Usuario no existe')</script>";
