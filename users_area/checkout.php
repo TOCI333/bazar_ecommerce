@@ -1,7 +1,7 @@
 <?php
-include("./includes/connect.php");
-include("./functions/funciones varias.php");
-session_start();
+include('../includes/connect.php');
+include('../functions/funciones varias.php');
+@session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,9 +9,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Products</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Ecommerce Checkout Page</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 
 <body>
@@ -119,42 +119,24 @@ session_start();
     </nav>
     <!-- End NavBar -->
 
-
-    <!-- Start Product details  -->
-    <div class="prod-details">
+    <!-- Start Landing Section -->
+    <div class="landing">
         <div class="container">
-            <div class="sub-container pt-4 pb-4">
-
+            <div class="row m-0">
                 <?php
-                viewDetails();
+                    if(!isset($_SESSION['username'])){
+                        include('user_login.php');
+                    }else{
+                        include('payment.php');
+                    }
                 ?>
             </div>
         </div>
     </div>
-    <!-- End Product details  -->
+    <!-- End Landing Section -->
 
-    <!-- Start Products  -->
-    <div class="products">
-        <div class="container">
-            <div class="categ-header">
-                <div class="sub-title">
-                    <span class="shape"></span>
-                    <span class="title">Productos Relacionados</span>
-                </div>
-                <h2>Descubre Más</h2>
-            </div>
-            <div class="row mb-3">
-                <?php
-                getProduct(3);
-                cart();
-                ?>
-            </div>
-            <div class="view d-flex justify-content-center align-items-center">
-                <button onclick="location.href='./products.php'">Ver Más Products</button>
-            </div>
-        </div>
-    </div>
-    <!-- End Products  -->
+
+
 
 
 
@@ -181,8 +163,7 @@ session_start();
     </div> -->
     <!-- End Footer -->
 
-    <script src="./assets//js/bootstrap.bundle.js"></script>
-    <script src="./assets//js/script.js"></script>
+    <script src="../assets/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

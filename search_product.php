@@ -17,8 +17,9 @@ session_start();
 <body>
     <!-- upper-nav -->
     <div class="upper-nav primary-bg p-2 px-3 text-center text-break">
-        <span>Venta de verano al 50% de descuento <a>Compra Ahora</a></span>
+        <span>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a>Shop Now</a></span>
     </div>
+    <!-- upper-nav -->
     <!-- Start NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -29,35 +30,35 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+                        <a class="nav-link"  href="./index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./products.php">Productos</a>
+                        <a class="nav-link active" aria-current="page" href="./products.php">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Acerca de</a>
+                        <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                     <?php
                         if(isset($_SESSION['username'])){                            
                             echo "
                             <li class='nav-item'>
-                            <a class='nav-link' href='./users_area/profile.php'>Mi Cuenta</a>
+                            <a class='nav-link' href='./users_area/profile.php'>My Account</a>
                         </li>";
                         }
                         else{
                             echo "
                             <li class='nav-item'>
-                            <a class='nav-link' href='./users_area/user_registration.php'>Registrarse</a>
+                            <a class='nav-link' href='./users_area/user_registration.php'>Register</a>
                         </li>";
                         }
                     ?>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                <form class="d-flex" action="" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+                    <input type="submit" value="Search" class="btn btn-outline-primary" name="search_data_btn">
                 </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -120,41 +121,65 @@ session_start();
     <!-- End NavBar -->
 
 
-    <!-- Start Product details  -->
-    <div class="prod-details">
+    <!-- Start All Prodcuts  -->
+    <div class="all-prod">
         <div class="container">
             <div class="sub-container pt-4 pb-4">
-
-                <?php
-                viewDetails();
-                ?>
-            </div>
-        </div>
-    </div>
-    <!-- End Product details  -->
-
-    <!-- Start Products  -->
-    <div class="products">
-        <div class="container">
-            <div class="categ-header">
-                <div class="sub-title">
-                    <span class="shape"></span>
-                    <span class="title">Productos Relacionados</span>
+                <div class="categ-header">
+                    <div class="sub-title">
+                        <span class="shape"></span>
+                        <span class="title">Categories & Brands</span>
+                    </div>
+                    <h2>Browse By Category & Brand</h2>
                 </div>
-                <h2>Descubre Más</h2>
-            </div>
-            <div class="row mb-3">
-                <?php
-                getProduct(3);
-                cart();
-                ?>
-            </div>
-            <div class="view d-flex justify-content-center align-items-center">
-                <button onclick="location.href='./products.php'">Ver Más Products</button>
+                <div class="row mx-0">
+                    <div class="col-md-2 side-nav p-0">
+                        <!-- side nav  -->
+                        <!-- brands to display -->
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <span class="shape"></span>
+                                <a href="products.php" class="nav-link fw-bolder nav-title">
+                                    <h4>Brands</h4>
+                                </a>
+                            </li>
+                            <?php
+                            getBrands();
+                            ?>
+                        </ul>
+                        <div class="divider"></div>
+                        <!-- categories to display -->
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <span class="shape"></span>
+                                <a href="products.php" class="nav-link fw-bolder nav-title">
+                                    <h4>Categories</h4>
+                                </a>
+                            </li>
+                            <?php
+                            getCategories();
+                            ?>
+
+                        </ul>
+
+                    </div>
+                    <div class="col-md-10">
+                        <!-- products  -->
+                        <div class="row">
+                            <?php
+                            search_product();
+                            filterCategoryProduct();
+                            filterBrandProduct();
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- End Products  -->
+    <!-- End All Prodcuts  -->
+
+
 
 
 
@@ -182,7 +207,6 @@ session_start();
     <!-- End Footer -->
 
     <script src="./assets//js/bootstrap.bundle.js"></script>
-    <script src="./assets//js/script.js"></script>
 </body>
 
 </html>

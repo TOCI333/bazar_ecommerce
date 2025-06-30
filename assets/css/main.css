@@ -122,6 +122,8 @@ ul {
     justify-content: center;
     align-items: center;
     position: relative;
+    top: 0;
+    left: 0;
     overflow: hidden;
     height: 320px;
     border-radius: 4px;
@@ -244,7 +246,7 @@ ul {
     gap: 18px;
     align-items: flex-start;
     padding: 40px;
-    color: white;
+    color: rgb(17, 0, 255);
 }
 
 .landing .container .row .cover .desc {
@@ -252,7 +254,7 @@ ul {
 }
 
 .landing .container .row .cover a {
-    color: #ffffff;
+    color: #0d00ff;
     text-decoration: underline;
 }
 
@@ -360,12 +362,12 @@ ul {
     gap: 25px;
     align-items: flex-start;
     justify-content: center;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 70px;
 }
 
 .adver .container .cover .title {
-    color: #00FF66;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -380,7 +382,7 @@ ul {
 }
 
 .adver .container .cover button {
-    background-color: #00FF66;
+    background-color: #00152f;
     color: #ffffff;
     padding: 8px 25px;
     border: none;
@@ -432,7 +434,7 @@ ul {
 }
 
 .products .container .cards .one-card .photo button {
-    position: absolute;
+    position: relativeq;
     width: 100%;
     background-color: #000000;
     color: #ffffff;

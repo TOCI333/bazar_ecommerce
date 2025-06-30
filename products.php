@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Products</title>
+    <title>Productos</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
 </head>
@@ -17,8 +17,9 @@ session_start();
 <body>
     <!-- upper-nav -->
     <div class="upper-nav primary-bg p-2 px-3 text-center text-break">
-        <span>Venta de verano al 50% de descuento <a>Compra Ahora</a></span>
+      <span>Venta de verano al 50% de descuento <a>Compra Ahora</a></span>
     </div>
+    <!-- upper-nav -->
     <!-- Start NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -89,11 +90,11 @@ session_start();
                             <?php
                                 if(!isset($_SESSION['username'])){
                                     echo "<span>
-                                    Welcome guest
+                                    Bienvenido Invitado
                                 </span>";
                             }else{
                                     echo "<span>
-                                    Welcome ".$_SESSION['username']. "</span>";
+                                    Bienvenido ".$_SESSION['username']. "</span>";
                                 }
                                 ?>
                         </a>
@@ -120,41 +121,67 @@ session_start();
     <!-- End NavBar -->
 
 
-    <!-- Start Product details  -->
-    <div class="prod-details">
+    <!-- Start All Prodcuts  -->
+    <div class="all-prod">
         <div class="container">
             <div class="sub-container pt-4 pb-4">
-
-                <?php
-                viewDetails();
-                ?>
-            </div>
-        </div>
-    </div>
-    <!-- End Product details  -->
-
-    <!-- Start Products  -->
-    <div class="products">
-        <div class="container">
-            <div class="categ-header">
-                <div class="sub-title">
-                    <span class="shape"></span>
-                    <span class="title">Productos Relacionados</span>
+                <div class="categ-header">
+                    <div class="sub-title">
+                        <span class="shape"></span>
+                        <span class="title">Categorias y marcas</span>
+                    </div>
+                    <h2>Explorar por categoría y marca</h2>
                 </div>
-                <h2>Descubre Más</h2>
-            </div>
-            <div class="row mb-3">
-                <?php
-                getProduct(3);
-                cart();
-                ?>
-            </div>
-            <div class="view d-flex justify-content-center align-items-center">
-                <button onclick="location.href='./products.php'">Ver Más Products</button>
+                <div class="row mx-0">
+                    <div class="col-md-2 side-nav p-0">
+                        <!-- side nav  -->
+                        <!-- brands to display -->
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <span class="shape"></span>
+                                <a href="products.php" class="nav-link fw-bolder nav-title">
+                                    <h4>Marcas</h4>
+                                </a>
+                            </li>
+                            <?php
+                            getBrands();
+                            ?>
+                        </ul>
+                        <div class="divider"></div>
+                        <!-- categories to display -->
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <span class="shape"></span>
+                                <a href="products.php" class="nav-link fw-bolder nav-title">
+                                    <h4>Categorias</h4>
+                                </a>
+                            </li>
+                            <?php
+                            getCategories();
+                            ?>
+
+                        </ul>
+
+                    </div>
+                    <div class="col-md-10">
+                        <!-- products  -->
+                        <div class="row">
+                            <?php
+                            getProduct();
+                            filterCategoryProduct();
+                            filterBrandProduct();
+                            $ip=getIPAddress();
+                            cart();
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- End Products  -->
+    <!-- End All Prodcuts  -->
+
+
 
 
 
@@ -182,7 +209,6 @@ session_start();
     <!-- End Footer -->
 
     <script src="./assets//js/bootstrap.bundle.js"></script>
-    <script src="./assets//js/script.js"></script>
 </body>
 
 </html>

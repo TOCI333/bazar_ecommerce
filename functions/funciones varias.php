@@ -14,26 +14,26 @@ function getProduct($numToDisplay = '')
             while ($row = mysqli_fetch_assoc($select_product_result)) {
                 $product_id = $row['product_id'];
                 $product_title = $row['product_title'];
-                $product_image_one = $row['product_image_one'];
-                $product_price = $row['product_price'];
+                $product_image_uno = $row['product_image_uno'];
+                $product_precio = $row['product_precio'];
                 $category_id = $row['category_id'];
                 $brand_id = $row['brand_id'];
                 echo "
         <div class='col-md-4 mb-2'>
         <div class='one-card'>
             <div class='photo'>
-                <img src='./admin/product_images/$product_image_one' alt='$product_title'>
+                <img src='$product_image_uno' alt='$product_title'>
                 <button>
-                    <a class='text-light' href='products.php?add_to_cart=$product_id'>Add To Cart</a>
+                    <a class='text-light' href='products.php?add_to_cart=$product_id'>Agregar al Carrito</a>
                 </button>
                 <button>
-                    <a class='text-light' href='detalles_producto.php?product_id=$product_id'>View More</a>
+                    <a class='text-light' href='detalles_producto.php?product_id=$product_id'>Ver Más</a>
                 </button>
             </div>
             <div class='content'>
                 <span class='title fw-bold'>$product_title</span>
                 <div class='desc'>
-                    <span>\$$product_price</span>
+                    <span>\$$product_precio</span>
                     <span>
                         <svg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'>
                             <path d='M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z' fill='#FFAD33' />
@@ -80,26 +80,26 @@ function filterCategoryProduct()
         while ($row = mysqli_fetch_assoc($select_product_result)) {
             $product_id = $row['product_id'];
             $product_title = $row['product_title'];
-            $product_image_one = $row['product_image_one'];
-            $product_price = $row['product_price'];
+            $product_image_uno = $row['product_image_uno'];
+            $product_precio = $row['product_precio'];
             $category_id = $row['category_id'];
             $brand_id = $row['brand_id'];
             echo "
         <div class='col-md-4 mb-2'>
         <div class='one-card'>
             <div class='photo'>
-                <img src='./admin/product_images/$product_image_one' alt='$product_title'>
+                <img src='$product_image_uno' alt='$product_title'>
                 <button>
-                <a class='text-light' href='products.php?add_to_cart=$product_id'>Add To Cart</a>
+                <a class='text-light' href='products.php?add_to_cart=$product_id'>Añadir al carrito</a>
             </button>
             <button>
-                <a class='text-light' href='detalles_producto.php?product_id=$product_id'>View More</a>
+                <a class='text-light' href='detalles_producto.php?product_id=$product_id'>Ver Más</a>
             </button>
             </div>
             <div class='content'>
                 <span class='title fw-bold'>$product_title</span>
                 <div class='desc'>
-                    <span>\$$product_price</span>
+                    <span>\$$product_precio</span>
                     <span>
                         <svg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'>
                             <path d='M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z' fill='#FFAD33' />
@@ -145,26 +145,26 @@ function filterBrandProduct()
         while ($row = mysqli_fetch_assoc($select_product_result)) {
             $product_id = $row['product_id'];
             $product_title = $row['product_title'];
-            $product_image_one = $row['product_image_one'];
-            $product_price = $row['product_price'];
+            $product_image_uno = $row['product_image_uno'];
+            $product_precio = $row['product_precio'];
             $category_id = $row['category_id'];
             $brand_id = $row['brand_id'];
             echo "
         <div class='col-md-4 mb-2'>
         <div class='one-card'>
             <div class='photo'>
-                <img src='./admin/product_images/$product_image_one' alt='$product_title'>
+                <img src='$product_image_uno' alt='$product_title'>
                 <button>
-                <a class='text-light' href='products.php?add_to_cart=$product_id'>Add To Cart</a>
+                <a class='text-light' href='products.php?add_to_cart=$product_id'>Añadir al carrito</a>
             </button>
             <button>
-                <a class='text-light' href='detalles_producto.php?product_id=$product_id'>View More</a>
+                <a class='text-light' href='detalles_producto.php?product_id=$product_id'>Ver Más</a>
             </button>
             </div>
             <div class='content'>
                 <span class='title fw-bold'>$product_title</span>
                 <div class='desc'>
-                    <span>\$$product_price</span>
+                    <span>\$$product_precio</span>
                     <span>
                         <svg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'>
                             <path d='M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z' fill='#FFAD33' />
@@ -220,7 +220,7 @@ function getCategories()
     $select_category_query = "SELECT * FROM `categories`";
     $select_category_result = mysqli_query($con, $select_category_query);
     while ($categories_row_data = mysqli_fetch_assoc($select_category_result)) {
-        $category_title = $categories_row_data['category_title'];
+        $category_title = $categories_row_data['categoria'];
         $category_id = $categories_row_data['category_id'];
         echo "
         <li class='nav-item'>
@@ -249,26 +249,26 @@ function search_product()
         while ($row = mysqli_fetch_assoc($search_product_result)) {
             $product_id = $row['product_id'];
             $product_title = $row['product_title'];
-            $product_image_one = $row['product_image_one'];
-            $product_price = $row['product_price'];
+            $product_image_uno = $row['product_image_uno'];
+            $product_precio = $row['product_precio'];
             $category_id = $row['category_id'];
             $brand_id = $row['brand_id'];
             echo "
         <div class='col-md-4 mb-2'>
         <div class='one-card'>
             <div class='photo'>
-                <img src='./admin/product_images/$product_image_one' alt='$product_title'>
+                <img src='$product_image_uno' alt='$product_title'>
                 <button>
-                <a class='text-light' href='products.php?add_to_cart=$product_id'>Add To Cart</a>
+                <a class='text-light' href='products.php?add_to_cart=$product_id'>Añadir al carrito</a>
             </button>
             <button>
-                <a class='text-light' href='detalles_producto.php?product_id=$product_id'>View More</a>
+                <a class='text-light' href='detalles_producto.php?product_id=$product_id'>Ver Más</a>
             </button>
             </div>
             <div class='content'>
                 <span class='title fw-bold'>$product_title</span>
                 <div class='desc'>
-                    <span>\$$product_price</span>
+                    <span>\$$product_precio</span>
                     <span>
                         <svg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'>
                             <path d='M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z' fill='#FFAD33' />
@@ -312,24 +312,24 @@ function viewDetails()
                     $product_id = $row['product_id'];
                     $product_title = $row['product_title'];
                     $product_desc = $row['product_description'];
-                    $product_image_one = $row['product_image_one'];
-                    $product_image_two = $row['product_image_two'];
-                    $product_image_three = $row['product_image_three'];
-                    $product_price = $row['product_price'];
+                    $product_image_uno = $row['product_image_uno'];
+                    $product_image_dos = $row['product_image_dos'];
+                    $product_image_tres = $row['product_image_tres'];
+                    $product_precio = $row['product_precio'];
                     $category_id = $row['category_id'];
                     $brand_id = $row['brand_id'];
                     echo "
                     <div class='row mx-0 justify-content-md-center gap-3 gap-md-0'>
                     <div class='col-md-2'>
                         <div class='prod-imgs'>
-                            <img src='./admin/product_images/$product_image_one' alt='$product_title'>
-                            <img src='./admin/product_images/$product_image_two' alt='$product_title'>
-                            <img src='./admin/product_images/$product_image_three' alt='$product_title'>
+                            <img src='$product_image_uno' alt='$product_title'>
+                            <img src='$product_image_dos' alt='$product_title'>
+                            <img src='$product_image_tres' alt='$product_title'>
                         </div>
                     </div>
                     <div class='col-md-5'>
                         <div class='main-img'>
-                            <img src='./admin/product_images/$product_image_one' alt='$product_title'>
+                            <img src='$product_image_uno' alt='$product_title'>
                         </div>
                     </div>
                     <div class='col-md-5'>
@@ -359,11 +359,11 @@ function viewDetails()
                                 </span>
                                 <span>|</span>
                                 <span class='in-stack fw-bold'>
-                                    In Stock
+                                    En Stock
                                 </span>
                             </div>
                             <h4>
-                                \$$product_price
+                                \$$product_precio
                             </h4>
                             <p>
                                 $product_desc
@@ -380,7 +380,7 @@ function viewDetails()
                                         <button type='button' class='btn btn-decrease' onclick='decreaseValueBtn()'> -</button>
                                     </div>
                                     <div>
-                                        <input type='submit' class='btn btn-primary' value='Buy Now'>
+                                        <input type='submit' class='btn btn-primary' value='Agregar al carrito'>
                                     </div>
                                 </div>
                             </form>
@@ -405,8 +405,8 @@ function viewDetails()
                                         </svg>
                                     </span>
                                     <div class='d-flex flex-column gap-2'>
-                                        <h6>Free Delivery</h6>
-                                        <span>Enter your postal code for Delivery Availability</span>
+                                        <h6>Envio Gratis a toda la república</h6>
+                                        <span>Ingresa tu código postal para la disponibilidad de entrega</span>
                                     </div>
                                 </div>
                                 <div class='d-flex gap-2 align-items-center'>
@@ -424,8 +424,8 @@ function viewDetails()
                                         </svg>
                                     </span>
                                     <div class='d-flex flex-column gap-2'>
-                                        <h6>Return Delivery</h6>
-                                        <span>Free 30 Days Delivery Returns. Details</span>
+                                        <h6>Devolución</h6>
+                                        <span>Devoluciones gratuitas dentro de los 30 días. Detalles</span>
                                     </div>
                                 </div>
                             </div>
@@ -463,13 +463,13 @@ function cart($num_of_items = 1)
         $select_result = mysqli_query($con, $select_query);
         $num_of_rows = mysqli_num_rows($select_result);
         if ($num_of_rows > 0) {
-            echo "<script>alert('This item is already present in Cart');</script>";
+            echo "<script>alert('Este producto ya está en el carrito');</script>";
             echo "<script>window.open('products.php','_self');</script>";
             // header("Location:products.php");
         } else {
             $insert_query = "INSERT INTO `card_details` (product_id,ip_address,quantity) VALUES ($getProductId,'$getIpAddress',1)";
             $insert_result = mysqli_query($con, $insert_query);
-            echo "<script>alert('This item added to Cart');</script>";
+            echo "<script>alert('Este producto ha sido añadido al carrito');</script>";
             echo "<script>window.open('products.php','_self');</script>";
         }
     }
@@ -507,8 +507,8 @@ function total_cart_price()
         $select_product_query = "SELECT * FROM `products` WHERE product_id=$product_id";
         $select_product_result = mysqli_query($con, $select_product_query);
         while ($row_product_price = mysqli_fetch_array($select_product_result)) {
-            $product_price = array($row_product_price['product_price']);
-            $product_values = array_sum($product_price);
+            $product_precio = array($row_product_price['product_precio']);
+            $product_values = array_sum($product_precio);
             $total_price += $product_values;
         }
     }
